@@ -16,6 +16,8 @@
 		36429ACE24A227AD00068F9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36429ACD24A227AD00068F9A /* main.m */; };
 		36429AD824A227AE00068F9A /* ffttestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36429AD724A227AE00068F9A /* ffttestTests.m */; };
 		36429AE324A227AE00068F9A /* ffttestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36429AE224A227AE00068F9A /* ffttestUITests.m */; };
+		36429AF224A22CC300068F9A /* MyScrollowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36429AF124A22CC300068F9A /* MyScrollowView.m */; };
+		36D89D5224A8805600DDFBC6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D89D5124A8805600DDFBC6 /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,9 @@
 		36429ADE24A227AE00068F9A /* ffttestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ffttestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36429AE224A227AE00068F9A /* ffttestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffttestUITests.m; sourceTree = "<group>"; };
 		36429AE424A227AE00068F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36429AF024A22CC300068F9A /* MyScrollowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScrollowView.h; sourceTree = "<group>"; };
+		36429AF124A22CC300068F9A /* MyScrollowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScrollowView.m; sourceTree = "<group>"; };
+		36D89D5124A8805600DDFBC6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D89D5224A8805600DDFBC6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +94,7 @@
 				36429AD624A227AE00068F9A /* ffttestTests */,
 				36429AE124A227AE00068F9A /* ffttestUITests */,
 				36429AB924A227AB00068F9A /* Products */,
+				36D89D5024A8805600DDFBC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +117,8 @@
 				36429ABF24A227AB00068F9A /* SceneDelegate.m */,
 				36429AC124A227AB00068F9A /* ViewController.h */,
 				36429AC224A227AB00068F9A /* ViewController.m */,
+				36429AF024A22CC300068F9A /* MyScrollowView.h */,
+				36429AF124A22CC300068F9A /* MyScrollowView.m */,
 				36429AC424A227AB00068F9A /* Main.storyboard */,
 				36429AC724A227AD00068F9A /* Assets.xcassets */,
 				36429AC924A227AD00068F9A /* LaunchScreen.storyboard */,
@@ -135,6 +144,14 @@
 				36429AE424A227AE00068F9A /* Info.plist */,
 			);
 			path = ffttestUITests;
+			sourceTree = "<group>";
+		};
+		36D89D5024A8805600DDFBC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36D89D5124A8805600DDFBC6 /* Accelerate.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +286,7 @@
 			files = (
 				36429AC324A227AB00068F9A /* ViewController.m in Sources */,
 				36429ABD24A227AB00068F9A /* AppDelegate.m in Sources */,
+				36429AF224A22CC300068F9A /* MyScrollowView.m in Sources */,
 				36429ACE24A227AD00068F9A /* main.m in Sources */,
 				36429AC024A227AB00068F9A /* SceneDelegate.m in Sources */,
 			);
