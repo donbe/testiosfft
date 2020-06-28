@@ -18,6 +18,7 @@
 		36429AE324A227AE00068F9A /* ffttestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36429AE224A227AE00068F9A /* ffttestUITests.m */; };
 		36429AF224A22CC300068F9A /* MyScrollowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36429AF124A22CC300068F9A /* MyScrollowView.m */; };
 		36D89D5224A8805600DDFBC6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D89D5124A8805600DDFBC6 /* Accelerate.framework */; };
+		36D89D5524A892FE00DDFBC6 /* FFT.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D89D5424A892FE00DDFBC6 /* FFT.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		36429AF024A22CC300068F9A /* MyScrollowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScrollowView.h; sourceTree = "<group>"; };
 		36429AF124A22CC300068F9A /* MyScrollowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScrollowView.m; sourceTree = "<group>"; };
 		36D89D5124A8805600DDFBC6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		36D89D5324A892FE00DDFBC6 /* FFT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFT.h; sourceTree = "<group>"; };
+		36D89D5424A892FE00DDFBC6 /* FFT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFT.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				36429ABF24A227AB00068F9A /* SceneDelegate.m */,
 				36429AC124A227AB00068F9A /* ViewController.h */,
 				36429AC224A227AB00068F9A /* ViewController.m */,
+				36D89D5324A892FE00DDFBC6 /* FFT.h */,
+				36D89D5424A892FE00DDFBC6 /* FFT.m */,
 				36429AF024A22CC300068F9A /* MyScrollowView.h */,
 				36429AF124A22CC300068F9A /* MyScrollowView.m */,
 				36429AC424A227AB00068F9A /* Main.storyboard */,
@@ -284,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D89D5524A892FE00DDFBC6 /* FFT.m in Sources */,
 				36429AC324A227AB00068F9A /* ViewController.m in Sources */,
 				36429ABD24A227AB00068F9A /* AppDelegate.m in Sources */,
 				36429AF224A22CC300068F9A /* MyScrollowView.m in Sources */,
