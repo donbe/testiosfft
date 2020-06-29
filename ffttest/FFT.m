@@ -11,20 +11,24 @@
 
 
 
-static const int n = 11;
-static const int fftsize =  1 << n;
-static const int halfSize = fftsize / 2;
+
 
 @interface FFT(){
     FFTSetup fftSetup;
+    int mLog2n;
+    int fftsize ;
+    int halfSize ;
 }
     
 @end
 
 @implementation FFT
 
--(void)setup{
-    fftSetup = vDSP_create_fftsetup(n, FFT_RADIX2);
+-(void)setupWithLog2n:(int)log2n{
+    mLog2n = log2n;
+    fftSetup = vDSP_create_fftsetup(log2n, FFT_RADIX2);
+    fftsize = 1 << log2n;
+    halfSize = fftsize/2;
 }
 
 -(void)destroy{
@@ -32,9 +36,15 @@ static const int halfSize = fftsize / 2;
 }
 
 
--(void)performfft:(float *)indata out:(float *)outdata{
-    float forwardInputReal[halfSize] = {0}; // 实数部分
-    float forwardInputImag[halfSize] = {0}; // 虚数部分
+-(void)performfft:(float *)indata out:(float *)outdata {
+    
+    
+    float forwardInputReal[halfSize]; // 实数部分
+    memset(forwardInputReal, 0, halfSize * sizeof(float));
+    
+    float forwardInputImag[halfSize]; // 虚数部分
+    memset(forwardInputImag, 0, halfSize * sizeof(float));
+    
     DSPSplitComplex fftInOut;
     fftInOut.realp = forwardInputReal;
     fftInOut.imagp = forwardInputImag;
@@ -44,7 +54,7 @@ static const int halfSize = fftsize / 2;
     vDSP_ctoz((DSPComplex*)indata, 2, &fftInOut, 1, (vDSP_Length)(halfSize));
     
     // 执行fft
-    vDSP_fft_zrip(fftSetup, &fftInOut,1, n, (FFTDirection)(FFT_FORWARD));
+    vDSP_fft_zrip(fftSetup, &fftInOut,1, mLog2n, (FFTDirection)(FFT_FORWARD));
     
     // 缩放结果
     float fftNormFactor = 1.0 / (float)(fftsize);
