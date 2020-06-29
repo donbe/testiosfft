@@ -35,13 +35,13 @@
     // 显示原数据图
     _scrollview = [[WaveScrollView alloc] initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 200)];
     [self.view addSubview:_scrollview];
-    _scrollview.contentSize = CGSizeMake(dsplength/2, 100);
+    _scrollview.contentSize = CGSizeMake(dsplength/2, 200);
     _scrollview.delegate = self;
     
     // 显示频率视图
-    _spectrum = [[SpectrumScrollView alloc] initWithFrame:CGRectMake(0, 450, self.view.bounds.size.width, 200)];
+    _spectrum = [[SpectrumScrollView alloc] initWithFrame:CGRectMake(0, 450, self.view.bounds.size.width, 80)];
     [self.view addSubview:_spectrum];
-    _spectrum.contentSize = CGSizeMake(dsplength/2, 100);
+    _spectrum.contentSize = CGSizeMake(dsplength/2, 80);
     _spectrum.delegate = self;
     
     // 频率数组，最终由以下频率组成的波形
