@@ -33,13 +33,46 @@
 -(void)drawRect:(CGRect)rect{
 
     int offsetx = MAX(0, self.contentOffset.x);
+    // 缩放因子
+    float scale = 0.5;
     
-    for (int i=offsetx*2; i< MIN(offsetx*2+self.bounds.size.width*2, [self->drawdata count]); i++) {
-    
+    for (int i=MAX(offsetx-100, 0) / scale; i< MIN(offsetx / scale + self.bounds.size.width / scale , [self->drawdata count]); i++) {
+
         float y = self.bounds.size.height/2 - 10 * [self->drawdata[i] floatValue];
-        CGContextFillRect(UIGraphicsGetCurrentContext(), CGRectMake(i*0.5,y,0.5,1));
+        CGContextFillRect(UIGraphicsGetCurrentContext(), CGRectMake(i*scale,y,scale,scale));
         
+        
+        // 画刻度
+        if (i % 100 == 0) {
+            
+            NSString *str = [NSString stringWithFormat:@"%d", i];
+            NSDictionary *attr = @{
+                NSFontAttributeName:[UIFont systemFontOfSize:8],
+                NSForegroundColorAttributeName:[UIColor blackColor]
+            };
+            
+            CGRect rect = [str boundingRectWithSize:CGSizeMake(100, 100) options:NSStringDrawingUsesLineFragmentOrigin attributes:attr context:nil];
+            
+            [str drawAtPoint:CGPointMake(i * scale - rect.size.width/2, self.bounds.size.height - 22) withAttributes:attr];
+            
+            CGContextFillRect(UIGraphicsGetCurrentContext(),
+                              CGRectMake(i * scale,
+                                         self.bounds.size.height - 10,
+                                         0.5,
+                                         self.bounds.size.height
+                                         )
+                              );
+        }
     }
+    
+    //画底线
+    CGContextFillRect(UIGraphicsGetCurrentContext(),
+                      CGRectMake(offsetx,
+                                 self.bounds.size.height - 0.5,
+                                 self.bounds.size.width,
+                                 self.bounds.size.height
+                                 )
+                      );
     
 }
 
