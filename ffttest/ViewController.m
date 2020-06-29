@@ -8,13 +8,15 @@
 
 #import "ViewController.h"
 #import <math.h>
-#import "MyScrollowView.h"
+#import "WaveScrollView.h"
 #import <Accelerate/Accelerate.h>
 #import "FFT.h"
+#import "SpectrumScrollView.h"
 
 @interface ViewController ()<UIScrollViewDelegate>
 
-@property(nonatomic,strong)MyScrollowView *scrollview;
+@property(nonatomic,strong)WaveScrollView *scrollview;
+@property(nonatomic,strong)SpectrumScrollView *spectrum;
 
 
 @end
@@ -24,22 +26,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    
-    
+    // 1024
     const int n = 11;
     const int dsplength =  1 << n;
     
     
     // 显示原数据图
-    _scrollview = [[MyScrollowView alloc] initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 200)];
+    _scrollview = [[WaveScrollView alloc] initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 200)];
     [self.view addSubview:_scrollview];
     _scrollview.contentSize = CGSizeMake(dsplength/2, 100);
-    _scrollview.backgroundColor = [UIColor grayColor];
     _scrollview.delegate = self;
     
-    
+    // 显示频率视图
+    _spectrum = [[SpectrumScrollView alloc] initWithFrame:CGRectMake(0, 450, self.view.bounds.size.width, 200)];
+    [self.view addSubview:_spectrum];
+    _spectrum.contentSize = CGSizeMake(dsplength/2, 100);
+    _spectrum.delegate = self;
     
     // 频率数组，最终由以下频率组成的波形
     int frequencies[10] = {1, 5, 25, 30, 75, 100, 300, 500, 512, 1023};
@@ -70,19 +73,24 @@
     float outP[dsplength/2] = {0};
     [fft performfft:fbuff out:outP];
     
-    //销毁
+    // 销毁
     [fft destroy];
 
-    // 显示转换出来的频率
+    // 打印频率
+    NSMutableArray *spectrumData = [NSMutableArray new];
     for (int i=0; i<dsplength/2; i++) {
         if (outP[i]>0.1) {
             NSLog(@"%d = %f",i,outP[i]);
         }
+        [spectrumData addObject:@(outP[i])];
     }
+    
+    // 显示频率
+    [_spectrum setdata:spectrumData];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [_scrollview setNeedsDisplay];
-    
+    [_spectrum setNeedsDisplay];
 }
 @end

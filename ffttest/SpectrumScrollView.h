@@ -1,8 +1,8 @@
 //
-//  MyScrollowView.h
+//  SpectrumScrollView.h
 //  ffttest
 //
-//  Created by donbe on 2020/6/23.
+//  Created by donbe on 2020/6/29.
 //  Copyright © 2020 donbe. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MyScrollowView : UIScrollView
+@interface SpectrumScrollView : UIScrollView
 
 -(void)setdata:(NSArray *)data;
 

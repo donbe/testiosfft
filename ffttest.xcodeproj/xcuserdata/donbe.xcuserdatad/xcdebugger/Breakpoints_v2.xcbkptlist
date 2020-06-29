@@ -14,10 +14,58 @@
             filePath = "ffttest/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "-scrollViewDidScroll:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7B69EC5-318C-4CCA-A7B9-DDF5A465B654"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ffttest/SpectrumScrollView.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-drawRect:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A7B69EC5-318C-4CCA-A7B9-DDF5A465B654 - 110c43b424383fc4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SpectrumScrollView drawRect:]"
+                  moduleName = "ffttest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donbe/Documents/ios/ffttest/ffttest/SpectrumScrollView.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "A7B69EC5-318C-4CCA-A7B9-DDF5A465B654 - 110c43b424383fc4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SpectrumScrollView drawRect:]"
+                  moduleName = "ffttest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/donbe/Documents/ios/ffttest/ffttest/SpectrumScrollView.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
