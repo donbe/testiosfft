@@ -68,7 +68,7 @@
     
     // 初始化fft
     FFT *fft = [FFT new];
-    [fft setupWithLog2n:11];
+    [fft setupWithLog2n:n];
     
     float outP[dsplength/2] = {0};
     [fft performfft:fbuff out:outP];

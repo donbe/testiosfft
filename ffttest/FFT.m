@@ -38,6 +38,13 @@
 
 -(void)performfft:(float *)indata out:(float *)outdata {
     
+    //加窗函数
+    float window[fftsize];
+    memset(&window, 0, fftsize * sizeof(float));
+    
+    vDSP_hann_window(window, fftsize, (int32_t)(vDSP_HANN_NORM));
+    vDSP_vmul(indata, 1, window, 1, indata, 1, fftsize);
+    
     
     float forwardInputReal[halfSize]; // 实数部分
     memset(forwardInputReal, 0, halfSize * sizeof(float));
