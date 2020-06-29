@@ -40,7 +40,7 @@
     
     for (int i=MAX(offsetx-100, 0) / scale; i< MIN(offsetx / scale + self.bounds.size.width / scale , [self->drawdata count]); i++) {
     
-        float y = self.bounds.size.height - 40 * [self->drawdata[i] floatValue];
+        float y = (self.bounds.size.height - 40) - 10 * [self->drawdata[i] floatValue];
         CGContextFillRect(UIGraphicsGetCurrentContext(),
                           CGRectMake(i * scale,
                                      y,
