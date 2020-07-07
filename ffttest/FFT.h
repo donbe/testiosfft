@@ -22,8 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)destroy;
 
 /// 执行fft操作
-/// @param indata 输入数据,大小是 2 << log2n 
-/// @param outdata 输出数据，大小是 indata 的一半
+/// @param indata 输入数据,大小是 2 << log2n ，数据类型是 float
+/// @param outdata 输出数据，大小是 indata 的一半，数据类型时 float
 -(void)performfft:(float *)indata out:(float *)outdata ;
 
 
