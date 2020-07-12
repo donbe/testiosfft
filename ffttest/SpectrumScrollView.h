@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)setdata:(NSArray *)data;
 
+
+/// 缩放因子，默认0.5，数字变大，图被拉升
+@property(nonatomic) float scale;
+
 @end
 
 NS_ASSUME_NONNULL_END

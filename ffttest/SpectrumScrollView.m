@@ -21,6 +21,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:241.0/255.0 blue:241.0/255.0 alpha:1];
+        self.scale = 0.5;
     }
     return self;
 }
@@ -35,16 +36,13 @@
 
     int offsetx = MAX(0, self.contentOffset.x);
     
-    // 缩放因子
-    float scale = 0.5;
-    
-    for (int i=MAX(offsetx-100, 0) / scale; i< MIN(offsetx / scale + self.bounds.size.width / scale , [self->drawdata count]); i++) {
+    for (int i=MAX(offsetx-100, 0) / self.scale; i< MIN(offsetx / self.scale + self.bounds.size.width / self.scale , [self->drawdata count]); i++) {
     
         float y = (self.bounds.size.height - 40) - 10 * [self->drawdata[i] floatValue];
         CGContextFillRect(UIGraphicsGetCurrentContext(),
-                          CGRectMake(i * scale,
+                          CGRectMake(i * self.scale,
                                      y,
-                                     scale,
+                                     self.scale,
                                      10 * [self->drawdata[i] floatValue]
                                      )
                           );
@@ -60,10 +58,10 @@
             
             CGRect rect = [str boundingRectWithSize:CGSizeMake(100, 100) options:NSStringDrawingUsesLineFragmentOrigin attributes:attr context:nil];
             
-            [str drawAtPoint:CGPointMake(i * scale - rect.size.width/2, self.bounds.size.height - 22) withAttributes:attr];
+            [str drawAtPoint:CGPointMake(i * self.scale - rect.size.width/2, self.bounds.size.height - 22) withAttributes:attr];
             
             CGContextFillRect(UIGraphicsGetCurrentContext(),
-                              CGRectMake(i * scale,
+                              CGRectMake(i * self.scale,
                                          self.bounds.size.height - 10,
                                          0.5,
                                          self.bounds.size.height
